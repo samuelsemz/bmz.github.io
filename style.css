@@ -1,0 +1,144 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #4A6692;
+    color: #333;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 30px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.logo {
+    max-width: 150px;
+    height: auto;
+    margin-bottom: 10px;
+    border-radius: 50px;
+}
+
+h1 {
+    color: #4A6692;
+}
+
+form {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin: 10px 0 5px;
+    color: #555;
+}
+
+input[type="text"],
+input[type="date"],
+input[type="number"],
+select {
+    width: calc(100% - 22px);
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #4A6692;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+button:hover {
+    background-color: #0277bd;
+    transform: scale(1.05);
+}
+
+button:active {
+    background-color: #01579b;
+}
+
+#results {
+    margin-top: 20px;
+}
+
+.results-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.retroactive,
+.ongoing {
+    width: 48%;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    padding: 5px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+p {
+    font-weight: bold;
+}
+
+.total {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.highlight {
+    font-size: 18px;
+    font-weight: bold;
+    color: #0288d1;
+}
+
+.result-title {
+    font-size: 16px; 
+    font-weight: bold;
+    color: #333; 
+}
+
+.total .amount {
+    color: #0288d1;
+}
+
+#retroactiveTotal,
+#ongoingTotal,
+#totalValue {
+    color: #333;
+}
+
+#retroactiveTotal .amount,
+#ongoingTotal .amount,
+#totalValue .amount {
+    color: #4A6692;
+}
+h2 {
+    color:#333;
+    font-size: 25px;
+    font-weight: bold;
+}
+.subtitle {
+    font-size: 15px;
+}
