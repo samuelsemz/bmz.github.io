@@ -1,18 +1,28 @@
 body {
-    font-family: Arial, sans-serif;
-    background-color: #4A6692;
-    color: #333;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to right, #4A6692, #2a4d6c);
+    color: #fff;
     margin: 0;
     padding: 20px;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .container {
-    max-width: 800px;
+    max-width: 650px;
     margin: auto;
-    padding: 20px;
-    background: #fff;
-    border-radius: 30px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
 }
 
 header {
@@ -21,14 +31,28 @@ header {
 }
 
 .logo {
-    max-width: 150px;
+    max-width: 120px;
     height: auto;
     margin-bottom: 10px;
-    border-radius: 50px;
+    border-radius: 50%;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
 }
 
 h1 {
-    color: #4A6692;
+    color: #2a4d6c;
+    font-weight: 700;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+h2 {
+    color: #333;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.subtitle {
+    font-size: 14px;
+    margin-bottom: 20px;
 }
 
 form {
@@ -46,23 +70,35 @@ input[type="date"],
 input[type="number"],
 select {
     width: calc(100% - 22px);
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 2px solid #4A6692;
+    border-radius: 25px;
+    background: rgba(255, 255, 255, 0.8);
+    transition: border 0.3s, background 0.3s;
+}
+
+input[type="text"]:focus,
+input[type="date"]:focus,
+input[type="number"]:focus,
+select:focus {
+    border-color: #0277bd;
+    background: rgba(255, 255, 255, 1);
 }
 
 button {
     display: block;
     width: 100%;
-    padding: 10px;
+    padding: 12px;
     background-color: #4A6692;
     color: #fff;
     border: none;
-    border-radius: 4px;
-    font-size: 16px;
+    border-radius: 25px;
+    font-size: 18px;
+    font-weight: 600;
     cursor: pointer;
     transition: background-color 0.3s, transform 0.3s;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 button:hover {
@@ -76,6 +112,10 @@ button:active {
 
 #results {
     margin-top: 20px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
 }
 
 .results-container {
@@ -86,6 +126,14 @@ button:active {
 .retroactive,
 .ongoing {
     width: 48%;
+    padding: 15px;
+    background-color: rgba(238, 238, 238, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.retroactive h3, .ongoing h3 {
+    color: #2a4d6c; /* Cor dos títulos das seções de resultados */
 }
 
 ul {
@@ -94,33 +142,28 @@ ul {
 }
 
 li {
-    padding: 5px 0;
+    padding: 8px 0;
     border-bottom: 1px solid #ddd;
-}
-
-p {
-    font-weight: bold;
+    color: #2a4d6c; /* Cor dos itens da lista */
 }
 
 .total {
     font-weight: bold;
-    font-size: 16px;
+    font-size: 18px;
+    margin-top: 10px;
+    color: #4A6692;
 }
 
 .highlight {
-    font-size: 18px;
+    font-size: 20px;
     font-weight: bold;
     color: #0288d1;
 }
 
 .result-title {
-    font-size: 16px; 
+    font-size: 18px;
     font-weight: bold;
-    color: #333; 
-}
-
-.total .amount {
-    color: #0288d1;
+    color: #333;
 }
 
 #retroactiveTotal,
@@ -133,12 +176,4 @@ p {
 #ongoingTotal .amount,
 #totalValue .amount {
     color: #4A6692;
-}
-h2 {
-    color:#333;
-    font-size: 25px;
-    font-weight: bold;
-}
-.subtitle {
-    font-size: 15px;
 }
