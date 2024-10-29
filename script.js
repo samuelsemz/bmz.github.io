@@ -32,6 +32,13 @@ function calculateValues() {
         const value = monthlyAmount;
         retroactiveValues.push(`${currentDate.toLocaleDateString('pt-BR')} R$ ${formatCurrency(value)}`);
         subtotal += value;
+
+        // Adicionando décimo terceiro
+        if (currentDate.getMonth() === 11) { // Dezembro
+            subtotal += monthlyAmount; // Adiciona o décimo terceiro
+            retroactiveValues.push(`<span class="highlight-13">13/${currentDate.getFullYear()}</span> R$ ${formatCurrency(monthlyAmount)}`);
+        }
+
         currentDate.setMonth(currentDate.getMonth() + 1);
     }
 
@@ -54,12 +61,17 @@ function calculateValues() {
         let currentMonth = new Date(endDate);
         for (let i = 0; i < months; i++) {
             ongoingValues.push(`${currentMonth.toLocaleDateString('pt-BR')} R$ ${formatCurrency(monthlyAmount)}`);
+            // Adicionando décimo terceiro
+            if (currentMonth.getMonth() === 11) { // Dezembro
+                ongoingAmount += monthlyAmount; // Adiciona o décimo terceiro
+                ongoingValues.push(`<span class="highlight-13">13/${currentMonth.getFullYear()}</span> R$ ${formatCurrency(monthlyAmount)}`);
+            }
             currentMonth.setMonth(currentMonth.getMonth() + 1);
         }
     }
 
     document.getElementById('retroactiveTotal').innerHTML = `Valor Retroativo Total: <span class="amount">${formatCurrency(retroactiveAmount)}</span>`;
-    document.getElementById('ongoingTotal').innerHTML = `Valor Vincendo Total: <span class="amount">${formatCurrency(ongoingAmount)}</span}`;
+    document.getElementById('ongoingTotal').innerHTML = `Valor Vincendo Total: <span class="amount">${formatCurrency(ongoingAmount)}</span>`;
 
     const totalValue = retroactiveAmount + ongoingAmount;
     document.getElementById('totalValue').innerHTML = `Valor Total: <span class="amount">${formatCurrency(totalValue)}</span>`;
@@ -70,7 +82,7 @@ function calculateValues() {
     retroactiveValuesList.innerHTML = '';
     retroactiveValues.forEach(value => {
         const li = document.createElement('li');
-        li.textContent = value;
+        li.innerHTML = value; // Usar innerHTML para renderizar o HTML
         retroactiveValuesList.appendChild(li);
     });
 
@@ -78,7 +90,7 @@ function calculateValues() {
     ongoingValuesList.innerHTML = '';
     ongoingValues.forEach(value => {
         const li = document.createElement('li');
-        li.textContent = value;
+        li.innerHTML = value; // Usar innerHTML para renderizar o HTML
         ongoingValuesList.appendChild(li);
     });
 
