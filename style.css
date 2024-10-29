@@ -133,7 +133,7 @@ button:active {
 }
 
 .retroactive h3, .ongoing h3 {
-    color: #2a4d6c; /* Cor dos títulos das seções de resultados */
+    color: #2a4d6c;
 }
 
 ul {
@@ -144,7 +144,7 @@ ul {
 li {
     padding: 8px 0;
     border-bottom: 1px solid #ddd;
-    color: #2a4d6c; /* Cor dos itens da lista */
+    color: #2a4d6c;
 }
 
 .total {
@@ -176,4 +176,8 @@ li {
 #ongoingTotal .amount,
 #totalValue .amount {
     color: #4A6692;
+}
+.highlight-13 {
+    color: #2a4d6c; 
+    font-weight: bold;
 }
